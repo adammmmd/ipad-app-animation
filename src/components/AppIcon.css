@@ -1,0 +1,25 @@
+.app-icon{
+    grid-column: span 1;
+    display: grid;
+    place-items: center;
+}
+
+.app-drawer__icon{
+    border-radius: 13px;
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+}
+
+.app-drawer__icon > img,
+.app-drawer__icon > div{
+    width: 100%;
+    border-radius: 13px;
+    margin-bottom: 5px;
+}
+  
+.app-drawer__icon p{
+    margin-top: 0.3rem;
+}
+  

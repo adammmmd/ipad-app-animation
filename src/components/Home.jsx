@@ -1,5 +1,4 @@
 import React from "react";
-import { motion as m} from "framer-motion";
 import './Home.css'
 import { useDispatch, useSelector } from "react-redux";
 import { appActions } from "../store/AppActive";
@@ -16,16 +15,12 @@ export default function Home() {
 
     function handleClick(appName){
         
-        dispatch(appActions.onDragY(0))
         dispatch(appActions.addAppActive(appName))
     }
 
     return(
-        <m.div
+        <div
             className="homescreen"
-            initial={{filter: 'blur(3px)'}}
-            animate={{filter: 'blur(0px)'}}
-            exit={{filter: 'blur(3px)'}}
             style={{backgroundImage: "url(./img/baby-blue-color-solid-background-1920x1080.png)"}}
         >
             <div className="app-drawer__container">
@@ -37,6 +32,6 @@ export default function Home() {
                 <Mail appID={appID} handleClick={handleClick}/>
                 <Settings appID={appID} handleClick={handleClick}/>
             </div>
-        </m.div>
+        </div>
     )
 }

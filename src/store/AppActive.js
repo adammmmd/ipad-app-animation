@@ -11,9 +11,6 @@ const appSlice = createSlice({
             state.app.push(action.payload)
             console.log(state.app)
         },
-        onDragY(state, action){
-            state.y = action.payload
-        },
         deleteAppActive(state, action) {
             state.app = state.app.filter(app => app !== action.payload);
             console.log(state.app)

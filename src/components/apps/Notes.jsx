@@ -18,7 +18,6 @@ export default function Notes({ appID, handleClick }) {
             position: "relative",
             width: "100%",
             height: "100vh",
-            display: "flex", // Make parent a flex container
             overflow: "hidden"
           }}
         >
@@ -33,24 +32,27 @@ export default function Notes({ appID, handleClick }) {
               backgroundColor: "blue",
               position: "absolute",
               top: 0,
-              left: 0
+              left: 0,
+              zIndex: 10 // Ensure it stays on top
             }}
           >
             <div style={{ color: "white", padding: "10px" }}>Blue Sidebar</div>
           </m.div>
 
+          {/* Yellow container - move as a unit */}
           <m.div
             animate={{
-                x: blueSidebarOpen ? "20vw" : "0%",
-              
+              x: blueSidebarOpen ? "20vw" : "0vw"
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             style={{
               width: "100vw",
-                border: "1px solid black",
+              border: "1px solid black",
               height: "100%",
               backgroundColor: "yellow",
-              position: "relative",
+              position: "absolute",
+              top: 0,
+              left: 0,
               overflow: "hidden"
             }}
           >
@@ -67,6 +69,7 @@ export default function Notes({ appID, handleClick }) {
                 position: "absolute",
                 top: 0,
                 left: 0,
+                zIndex: 1
               }}
             >
               <div style={{ padding: "10px" }}>
@@ -86,12 +89,10 @@ export default function Notes({ appID, handleClick }) {
               </div>
             </m.div>
 
-            {/* Green div (main content) */}
+            {/* Green div (main content) - removing layout prop */}
             <m.div
-              layout
               animate={{
-                width: noteListOpen ? "70vw" : "100%",
-                right: 0,
+                width: noteListOpen ? "70vw" : "100%"
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               style={{
@@ -100,7 +101,7 @@ export default function Notes({ appID, handleClick }) {
                 backgroundColor: "green",
                 position: "absolute",
                 top: 0,
-                right: 0,
+                right: 0
               }}
             >
               <div style={{ padding: "10px" }}>
@@ -118,7 +119,9 @@ export default function Notes({ appID, handleClick }) {
                 <div style={{ marginTop: "10px", color: "white" }}>
                   Green Content Area
                 </div>
-                Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)
+                <div style={{ marginTop: "10px", color: "white", wordBreak: "break-word" }}>
+                  Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)Blue div (sidebar that appears when Y is clicked)
+                </div>
               </div>
             </m.div>
           </m.div>
@@ -126,4 +129,4 @@ export default function Notes({ appID, handleClick }) {
       </AppPage>
     </>
   );
-}
+}   

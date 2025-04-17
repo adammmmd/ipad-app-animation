@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const appSlice = createSlice({
     name: "app",
     initialState: {
-        app: [],
+        app: ['Notes'],
         y: 0
     },
     reducers: {

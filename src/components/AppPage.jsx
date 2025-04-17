@@ -38,7 +38,7 @@ export default function AppPage({children, app}) {
                         drag
                         layout
                         layoutId={app}
-                        style={{scale: scale, borderRadius: borderRadius}}
+                        style={{scale: scale, borderRadius: borderRadius, userSelect: "none"}}
                         dragControls={dragControls}
                         dragListener={false}
                         dragMomentum={false}
